@@ -10,21 +10,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
+import safe.views.Pharmacy_View;
 
 /**
  *
  * @author chokayg3
  */
-public class Database_Model {
+public class Pharmacy_Database_Model {
     
     //Creating instance variables
     Connection connection;
+    Pharmacy_View pharmacy_view;
     
     /**
      * Constructor for the class
      */
-    public Database_Model(){
-        connectTodatabase();
+    public Pharmacy_Database_Model(Pharmacy_View pharmacy_view){
+//        connectTodatabase();
+        this.pharmacy_view = pharmacy_view;
     }
     
         /**
@@ -43,28 +47,32 @@ public class Database_Model {
         }//End Of Catch
     }//End of connectTodatabase
     
-      /**
+    /**
      * 
+     * @param id
      */
-    public void displayPatientdatabase ( ) {
-//         patient_table_view.setRowCount(0);        
+    public void displayPatientdatabase (String id) {     
         try 
         {
              Statement statement = connection.createStatement ( );
-             ResultSet resultSet = statement.executeQuery ( "SELECT patientFname=?,patientSname=? FROM patients where patientId=?" );
+             ResultSet resultSet = statement.executeQuery ( "select patientFname, patientSname from patients where patientId='"+id+"'");
+             if ( resultSet.next()){
 //         while ( resultSet.next ( ) )
-//         {
-             Object [] w = {resultSet.getString ( "patientFname" ),resultSet.getString ( "patientSname" )};   
-             System.out.println(""+Arrays.toString(w));
-             System.out.println(resultSet.getString("patientId"));
+//         {  
+             String fname = resultSet.getString ( "patientFname" );
+             String sname = resultSet.getString("patientSname");
+             pharmacy_view.setPatientFname(fname);
+             pharmacy_view.setPatientSname(sname);
+        }
+//             System.out.println(""+Arrays.toString(w));
 //         }//End Of While
          System.out.println("Displayed");
-//         JOptionPane.showMessageDialog(null, "Successfully Dispalyed The Data In The DataBase", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+         JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
         }//End Of Try
         catch ( SQLException e ) 
         {
             System.out.println(e.toString());
-//        JOptionPane.showMessageDialog(null, "Failed To Display The Data In The DataBase", "Failed", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(pharmacy_view, "Patient noT in database", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
         
     }//End of displayPatientdatabase
