@@ -5,6 +5,8 @@
  */
 package safe.views;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author chokayg3
@@ -17,6 +19,36 @@ public class Pharmacist_View extends javax.swing.JFrame {
     public Pharmacist_View() {
         initComponents();
     }
+    
+    /**
+     * Method to get patient id text field
+     * @return 
+     */
+    public String getPatientId(){
+        return patientId.getText();
+    }//End of getPatientId
+    
+    /**
+     * Method to return the search button
+     * @return 
+     */
+    public JButton getSearch(){
+        return search_button;
+    }//End of getSearch
+    
+    /**
+     * Method to set text for patient first name
+     */
+    public void setPatientFname(){
+        patientFname.setText("");
+    }//End of setPatientFname
+    
+    /**
+     * Method to set text for patient surname
+     */
+    public void setPatientSname(){
+        patientSname.setText("");
+    }//End ofPatientSname
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,46 +60,46 @@ public class Pharmacist_View extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        patientId = new javax.swing.JTextField();
+        search_button = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        patientFname = new javax.swing.JTextField();
+        patientAge = new javax.swing.JTextField();
+        patientSname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        patientBloodgroup = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("jButton1");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 11, 192, 149));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 191, 37));
+        getContentPane().add(patientId, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 191, 37));
 
-        jButton2.setText("Search");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, 37));
+        search_button.setText("Search");
+        getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, 37));
 
         jLabel1.setText("ID");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 20, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 200, 40));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 200, 40));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 200, 40));
+        getContentPane().add(patientFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 200, 40));
+        getContentPane().add(patientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 200, 40));
+        getContentPane().add(patientSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 200, 40));
 
         jLabel2.setText("First Name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, 30));
 
         jLabel3.setText("Surname");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, 30));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, 30));
 
         jLabel4.setText("Age");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
 
         jLabel5.setText("Bloodgroup");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, 40));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 210, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, 40));
+        getContentPane().add(patientBloodgroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 200, 40));
 
         pack();
         setLocationRelativeTo(null);
@@ -110,16 +142,16 @@ public class Pharmacist_View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField patientAge;
+    private javax.swing.JTextField patientBloodgroup;
+    private javax.swing.JTextField patientFname;
+    private javax.swing.JTextField patientId;
+    private javax.swing.JTextField patientSname;
+    private javax.swing.JButton search_button;
     // End of variables declaration//GEN-END:variables
 }
