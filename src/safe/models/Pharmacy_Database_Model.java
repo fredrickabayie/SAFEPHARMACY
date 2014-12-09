@@ -38,7 +38,7 @@ public class Pharmacy_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.83/safe?user=safe&password=");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.76/safe?user=safe&password=");
              System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )
@@ -55,14 +55,28 @@ public class Pharmacy_Database_Model {
         try 
         {
              Statement statement = connection.createStatement ( );
-             ResultSet resultSet = statement.executeQuery ( "select patientFname, patientSname from patients where patientId='"+id+"'");
+             ResultSet resultSet = statement.executeQuery ( "select patientFname,patientSname,patientAge,patientBloodgroup,"
+                  + "patientDisease,patientSymptom,drugName,drugInstruction from patients where patientId='"+id+"'");
              if ( resultSet.next()){
 //         while ( resultSet.next ( ) )
 //         {  
              String fname = resultSet.getString ( "patientFname" );
              String sname = resultSet.getString("patientSname");
+             String age = resultSet.getString("patientAge");
+             String blood = resultSet.getString("patientBloodgroup");
+             String disease = resultSet.getString("patientDisease");
+             String symptom = resultSet.getString("patientSymptom");
+             String drug = resultSet.getString("drugName");
+             String instruction = resultSet.getString("drugInstruction");
+             
              pharmacy_view.setPatientFname(fname);
              pharmacy_view.setPatientSname(sname);
+             pharmacy_view.setPatientAge(age);
+             pharmacy_view.setPatientBlood(blood);
+             pharmacy_view.setPatientDisease(disease);
+             pharmacy_view.setPatientSymptom(symptom);
+             pharmacy_view.setPatientDrug(drug);
+             pharmacy_view.setDrugInstruction(instruction);
         }
 //             System.out.println(""+Arrays.toString(w));
 //         }//End Of While

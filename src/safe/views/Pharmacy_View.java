@@ -50,7 +50,55 @@ public class Pharmacy_View extends javax.swing.JFrame {
      */
     public void setPatientSname(String sname){
         patientSname.setText(sname);
-    }//End ofPatientSname
+    }//End of setPatientSname
+    
+    /**
+     * Method to set text for patient age
+     * @param age 
+     */
+    public void setPatientAge (String age){
+        patientAge.setText(age);
+    }//End of setPatientAge
+    
+    /**
+     * Method to set text for patient blood
+     * @param blood 
+     */
+    public void setPatientBlood(String blood){
+        patientBlood.setText(blood);
+    }//End of setPatientBlood
+    
+    /**
+     * Method to set text for patient disease
+     * @param disease 
+     */
+    public void setPatientDisease(String disease){
+        patientDisease.setText(disease);
+    }//End of setPatientDisease
+    
+    /**
+     * Method to set text for patient symptom
+     * @param symptom 
+     */
+    public void setPatientSymptom(String symptom){
+        patientSymptom.setText(symptom);
+    }//End of setPatientSymptom
+    
+    /**
+     * Method to set text for patient drug
+     * @param drug 
+     */
+    public void setPatientDrug(String drug){
+        patientDrug.setText(drug);
+    }//End of setPatientDrug
+    
+    /**
+     * Method to set text for drug instruction
+     * @param instruction 
+     */
+    public void setDrugInstruction(String instruction){
+        drugInstruction.setText(instruction);
+    }//End of setDrugInstruction
     
     
 
@@ -70,7 +118,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        patientBloodgroup = new javax.swing.JTextField();
+        patientBlood = new javax.swing.JTextField();
         patientSname = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         patientFname = new javax.swing.JTextField();
@@ -87,7 +135,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
         patientSymptom = new javax.swing.JTextArea();
         patientDrug = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        DrugInstruction = new javax.swing.JTextArea();
+        drugInstruction = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,8 +157,8 @@ public class Pharmacy_View extends javax.swing.JFrame {
         jLabel5.setText("Bloodgroup");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 40));
 
-        patientBloodgroup.setEditable(false);
-        jPanel1.add(patientBloodgroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 200, 40));
+        patientBlood.setEditable(false);
+        jPanel1.add(patientBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 200, 40));
 
         patientSname.setEditable(false);
         jPanel1.add(patientSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 200, 40));
@@ -159,10 +207,10 @@ public class Pharmacy_View extends javax.swing.JFrame {
         patientDrug.setEditable(false);
         jPanel2.add(patientDrug, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 130, 50));
 
-        DrugInstruction.setEditable(false);
-        DrugInstruction.setColumns(20);
-        DrugInstruction.setRows(5);
-        jScrollPane2.setViewportView(DrugInstruction);
+        drugInstruction.setEditable(false);
+        drugInstruction.setColumns(20);
+        drugInstruction.setRows(5);
+        jScrollPane2.setViewportView(drugInstruction);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 60, 220, 110));
 
@@ -211,7 +259,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea DrugInstruction;
+    private javax.swing.JTextArea drugInstruction;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -228,7 +276,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField patientAge;
-    private javax.swing.JTextField patientBloodgroup;
+    private javax.swing.JTextField patientBlood;
     private javax.swing.JTextField patientDisease;
     private javax.swing.JTextField patientDrug;
     private javax.swing.JTextField patientFname;
