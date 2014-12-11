@@ -5,12 +5,10 @@
  */
 package safe.models;
 
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import safe.views.Pharmacy_View;
@@ -30,7 +28,6 @@ public class Pharmacy_Database_Model {
      * @param pharmacy_view
      */
     public Pharmacy_Database_Model(Pharmacy_View pharmacy_view){
-//        connectTodatabase();
         this.pharmacy_view = pharmacy_view;
     }
     
@@ -41,20 +38,19 @@ public class Pharmacy_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.107/safe?user=safe&password=");
-             
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://169.254.60.63/safe?user=safe&password=");
+             JOptionPane.showMessageDialog(pharmacy_view, "Connected to Database", "Connected", JOptionPane.INFORMATION_MESSAGE);
+                 System.out.println ( "Connected" );
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )
         {
             System.out.println ( "Not Connected " + e.toString ( ) );
             JOptionPane.showMessageDialog(pharmacy_view, "Not Connected to Database", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
-    JOptionPane.showMessageDialog(pharmacy_view, "Connected to Database", "Connected", JOptionPane.INFORMATION_MESSAGE);
-    System.out.println ( "Connected" );
     }//End of connectTodatabase
     
     /**
-     * 
+     * Method to display patient details
      * @param id
      */
     public void displayPatientdatabase (String id) {     
@@ -64,8 +60,6 @@ public class Pharmacy_Database_Model {
              ResultSet resultSet = statement.executeQuery ( "select patientFname,patientSname,patientAge,patientBloodgroup,"
                   + "patientDisease,patientSymptom,drugName,drugInstruction,patientImage from patients where patientId='"+id+"'");
              if ( resultSet.next()){
-//         while ( resultSet.next ( ) )
-//         {  
              String fname = resultSet.getString ( "patientFname" );
              String sname = resultSet.getString("patientSname");
              String age = resultSet.getString("patientAge");
@@ -75,7 +69,6 @@ public class Pharmacy_Database_Model {
              String drug = resultSet.getString("drugName");
              String instruction = resultSet.getString("drugInstruction");
              byte[] imagedata = resultSet.getBytes("patientImage");
-//             Blob im = resultSet.getBlob("patientImage");
              ImageIcon format = new ImageIcon (imagedata);
              
              pharmacy_view.setPatientFname(fname);
@@ -86,12 +79,12 @@ public class Pharmacy_Database_Model {
              pharmacy_view.setPatientSymptom(symptom);
              pharmacy_view.setPatientDrug(drug);
              pharmacy_view.setDrugInstruction(instruction);
-//             pharmacy_view.getPatientImage().setIcon(format);
-             pharmacy_view.setIm(format);
-             System.out.println(""+format);
+             pharmacy_view.setPatientImage().setIcon(format);
+//             pharmacy_view.setIm(format);
+//             format.getImage();
+             System.out.println(format.getImage());
+             JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);
         }
-//             System.out.println(""+Arrays.toString(w));
-//         }//End Of While
          System.out.println("Displayed");
 //         JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
         }//End Of Try

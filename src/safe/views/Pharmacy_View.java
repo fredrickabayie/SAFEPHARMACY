@@ -5,11 +5,8 @@
  */
 package safe.views;
 
-import java.sql.Blob;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 
 /**
  *
@@ -26,19 +23,20 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get patient image button
-     * @return 
+     * @param i 
+     * @return  
      */
-    public JButton getPatientImage(){
-        return patientImage;
+    public JButton setPatientImage(){
+         return patientImage;
     }//End of getPatientImage
     
 //    public JLabel getIm(){
 //        return im;
 //    }
     
-    public void setIm(ImageIcon i){
-        im.setIcon(i);
-    }
+//    public void setIm(ImageIcon i){
+//        im.setIcon(i);
+//    }
     
     /**
      * Method to get patient id text field
@@ -166,128 +164,138 @@ public class Pharmacy_View extends javax.swing.JFrame {
         patientId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         search_button = new javax.swing.JButton();
-        close = new javax.swing.JButton();
-        im = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jPanel4 = new javax.swing.JPanel();
+        close = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("Bloodgroup");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, 40));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, -1, 40));
 
         patientBlood.setEditable(false);
-        jPanel1.add(patientBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 200, 40));
+        jPanel1.add(patientBlood, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 200, 40));
 
         patientSname.setEditable(false);
-        jPanel1.add(patientSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 200, 40));
+        jPanel1.add(patientSname, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 200, 40));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Surname");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, -1, 40));
 
         patientFname.setEditable(false);
-        jPanel1.add(patientFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 200, 40));
+        jPanel1.add(patientFname, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 200, 40));
 
         patientAge.setEditable(false);
-        jPanel1.add(patientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 200, 40));
+        jPanel1.add(patientAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 200, 40));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Age");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 40));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("First Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPane1.addTab("Patient Details", jPanel1);
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("Patient Disease");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 5, -1, 30));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 20));
 
         patientDisease.setEditable(false);
-        jPanel2.add(patientDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 180, 50));
+        jPanel2.add(patientDisease, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 200, 40));
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel7.setText("Patient Symptom");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, 20));
 
         patientSymptom.setEditable(false);
         patientSymptom.setColumns(20);
+        patientSymptom.setLineWrap(true);
         patientSymptom.setRows(5);
         jScrollPane1.setViewportView(patientSymptom);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 420, 80));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 430, 70));
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("Patient Health", jPanel2);
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         patientDrug.setEditable(false);
-        jPanel3.add(patientDrug, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 180, 50));
+        jPanel3.add(patientDrug, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 200, 40));
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setText("Drugs");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, 40));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, -1, 20));
 
         drugInstruction.setEditable(false);
         drugInstruction.setColumns(20);
+        drugInstruction.setLineWrap(true);
         drugInstruction.setRows(5);
         jScrollPane2.setViewportView(drugInstruction);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 440, 100));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 430, 70));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel9.setText("Instruction");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, 40));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, 20));
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jTabbedPane1.addTab("Drug Details", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 900, 140));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 690, 120));
 
         jDesktopPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Unique Details"));
 
-        patientImage.setText("Photo");
+        patientImage.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        patientImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/camera-48.png"))); // NOI18N
         jDesktopPane1.add(patientImage);
         patientImage.setBounds(10, 20, 230, 160);
         jDesktopPane1.add(patientId);
-        patientId.setBounds(350, 30, 191, 37);
+        patientId.setBounds(370, 140, 200, 40);
 
-        jLabel1.setText("ID");
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Pateint ID");
         jDesktopPane1.add(jLabel1);
-        jLabel1.setBounds(320, 30, 20, 30);
+        jLabel1.setBounds(300, 140, 70, 40);
 
-        search_button.setText("Search");
+        search_button.setForeground(new java.awt.Color(255, 255, 255));
+        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/search-32.png"))); // NOI18N
+        search_button.setMnemonic('S');
         jDesktopPane1.add(search_button);
-        search_button.setBounds(550, 30, 69, 37);
+        search_button.setBounds(570, 140, 40, 40);
 
-        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
-        close.setToolTipText("close");
-        jDesktopPane1.add(close);
-        close.setBounds(870, 0, 30, 30);
-
-        im.setText("PHOTO");
-        jDesktopPane1.add(im);
-        im.setBounds(660, 30, 120, 80);
-
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 190));
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 690, 190));
 
         jScrollPane3.setViewportView(jTree1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 320, 270));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 320, 270));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 570, 270));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 370, 270));
+
+        close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/safe/images/cancel-26.png"))); // NOI18N
+        close.setToolTipText("close");
+        getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 30, 30));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel10.setText("SAFE PHARMACY");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 320, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -324,7 +332,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pharmacy_View().setVisible(true);
+//                new Pharmacy_View().setVisible(true);
             }
         });
     }
@@ -332,9 +340,9 @@ public class Pharmacy_View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton close;
     private javax.swing.JTextArea drugInstruction;
-    private javax.swing.JLabel im;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
