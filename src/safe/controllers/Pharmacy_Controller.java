@@ -44,8 +44,14 @@ public void pharmacyButton (){
                 search();
                 System.out.println("Search button pressed");
             }//End of if
+            
+            //Get close button
+            if (e.getSource().equals(pharmacy_view.getClose())){
+                pharmacy_view.dispose();
+            }
         };
          pharmacy_view.getSearch().addActionListener ( actionListener );
+         pharmacy_view.getClose().addActionListener ( actionListener );
                 }
     catch(Exception e){
         System.out.println(e.toString());

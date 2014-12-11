@@ -5,11 +5,13 @@
  */
 package safe.models;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import safe.views.Pharmacy_View;
 
@@ -25,26 +27,30 @@ public class Pharmacy_Database_Model {
     
     /**
      * Constructor for the class
+     * @param pharmacy_view
      */
     public Pharmacy_Database_Model(Pharmacy_View pharmacy_view){
 //        connectTodatabase();
         this.pharmacy_view = pharmacy_view;
     }
     
-        /**
+    /**
      * A method to connect to the database
      */
     public final void connectTodatabase ( ){
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.76/safe?user=safe&password=");
-             System.out.println ( "Connected" );
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.30.107/safe?user=safe&password=");
+             
         }//End Of Try
         catch ( ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e )
         {
             System.out.println ( "Not Connected " + e.toString ( ) );
+            JOptionPane.showMessageDialog(pharmacy_view, "Not Connected to Database", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
+    JOptionPane.showMessageDialog(pharmacy_view, "Connected to Database", "Connected", JOptionPane.INFORMATION_MESSAGE);
+    System.out.println ( "Connected" );
     }//End of connectTodatabase
     
     /**
@@ -56,7 +62,7 @@ public class Pharmacy_Database_Model {
         {
              Statement statement = connection.createStatement ( );
              ResultSet resultSet = statement.executeQuery ( "select patientFname,patientSname,patientAge,patientBloodgroup,"
-                  + "patientDisease,patientSymptom,drugName,drugInstruction from patients where patientId='"+id+"'");
+                  + "patientDisease,patientSymptom,drugName,drugInstruction,patientImage from patients where patientId='"+id+"'");
              if ( resultSet.next()){
 //         while ( resultSet.next ( ) )
 //         {  
@@ -68,6 +74,9 @@ public class Pharmacy_Database_Model {
              String symptom = resultSet.getString("patientSymptom");
              String drug = resultSet.getString("drugName");
              String instruction = resultSet.getString("drugInstruction");
+             byte[] imagedata = resultSet.getBytes("patientImage");
+//             Blob im = resultSet.getBlob("patientImage");
+             ImageIcon format = new ImageIcon (imagedata);
              
              pharmacy_view.setPatientFname(fname);
              pharmacy_view.setPatientSname(sname);
@@ -77,16 +86,19 @@ public class Pharmacy_Database_Model {
              pharmacy_view.setPatientSymptom(symptom);
              pharmacy_view.setPatientDrug(drug);
              pharmacy_view.setDrugInstruction(instruction);
+//             pharmacy_view.getPatientImage().setIcon(format);
+             pharmacy_view.setIm(format);
+             System.out.println(""+format);
         }
 //             System.out.println(""+Arrays.toString(w));
 //         }//End Of While
          System.out.println("Displayed");
-         JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+//         JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
         }//End Of Try
         catch ( SQLException e ) 
         {
             System.out.println(e.toString());
-        JOptionPane.showMessageDialog(pharmacy_view, "Patient noT in database", "Failed", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(pharmacy_view, "Patient not in database", "Failed", JOptionPane.ERROR_MESSAGE);
         }//End Of Catch
         
     }//End of displayPatientdatabase
