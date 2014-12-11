@@ -38,7 +38,7 @@ public class Pharmacy_Database_Model {
     try
         {
             Class.forName ( "com.mysql.jdbc.Driver" ).newInstance ( );
-             connection = java.sql.DriverManager.getConnection("jdbc:mysql://169.254.60.63/safe?user=safe&password=");
+             connection = java.sql.DriverManager.getConnection("jdbc:mysql://10.10.28.212/safe?user=safe&password=");
              JOptionPane.showMessageDialog(pharmacy_view, "Connected to Database", "Connected", JOptionPane.INFORMATION_MESSAGE);
                  System.out.println ( "Connected" );
         }//End Of Try
@@ -80,8 +80,6 @@ public class Pharmacy_Database_Model {
              pharmacy_view.setPatientDrug(drug);
              pharmacy_view.setDrugInstruction(instruction);
              pharmacy_view.setPatientImage().setIcon(format);
-//             pharmacy_view.setIm(format);
-//             format.getImage();
              System.out.println(format.getImage());
              JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);
         }
