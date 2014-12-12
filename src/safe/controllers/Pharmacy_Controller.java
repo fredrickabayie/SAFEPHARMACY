@@ -7,8 +7,10 @@ package safe.controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import safe.models.Pharmacy_Database_Model;
 import safe.views.Pharmacy_View;
+import static safe.views.Pharmacy_View.list;
 
 /**
  *
@@ -49,9 +51,15 @@ public void pharmacyButton (){
             if (e.getSource().equals(pharmacy_view.getClose())){
                 pharmacy_view.dispose();
             }
+            
+            //Get print button
+            if(e.getSource().equals(pharmacy_view.getPrint())){
+                print();
+            }
         };
          pharmacy_view.getSearch().addActionListener ( actionListener );
          pharmacy_view.getClose().addActionListener ( actionListener );
+         pharmacy_view.getPrint().addActionListener ( actionListener );
                 }
     catch(Exception e){
         System.out.println(e.toString());
@@ -69,5 +77,15 @@ public void search(){
     }
     
 }//End of search
+
+public void print(){
+    String fname = pharmacy_view.getPatientFname();
+    String sname = pharmacy_view.getPatientSname();
+    String dname = pharmacy_view.getPatientDrug();
+    String dIns = pharmacy_view.getDrugIns();
+    
+    Object [] m = {fname,sname,dname,dIns};
+    pharmacy_view.list(""+Arrays.toString(m));
+}
     
 }//End of class
