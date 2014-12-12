@@ -5,6 +5,9 @@
  */
 package safe.models;
 
+/**
+ * Importing java libraries
+ */
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +18,8 @@ import safe.views.Pharmacy_View;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Pharmacy_Database_Model {
     
@@ -25,7 +29,7 @@ public class Pharmacy_Database_Model {
     
     /**
      * Constructor for the class
-     * @param pharmacy_view
+     * @param pharmacy_view instance of the pharmacy view class
      */
     public Pharmacy_Database_Model(Pharmacy_View pharmacy_view){
         this.pharmacy_view = pharmacy_view;
@@ -51,7 +55,7 @@ public class Pharmacy_Database_Model {
     
     /**
      * Method to display patient details
-     * @param id
+     * @param id the patient id
      */
     public void displayPatientdatabase (String id) {     
         try 
@@ -83,8 +87,7 @@ public class Pharmacy_Database_Model {
              System.out.println(format.getImage());
              JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);
         }
-         System.out.println("Displayed");
-//         JOptionPane.showMessageDialog(pharmacy_view, "Patient in the database", "Displayed", JOptionPane.INFORMATION_MESSAGE);     
+         System.out.println("Displayed");    
         }//End Of Try
         catch ( SQLException e ) 
         {

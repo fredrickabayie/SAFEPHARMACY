@@ -5,12 +5,16 @@
  */
 package safe.views;
 
+/**
+ * Importing java libraries
+ */
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
 /**
  *
- * @author chokayg3
+ * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Pharmacy_View extends javax.swing.JFrame {
     DefaultListModel list_model;
@@ -25,7 +29,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get patient image button 
-     * @return  
+     * @return  the patient image button
      */
     public JButton setPatientImage(){
          return patientImage;
@@ -33,7 +37,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get patient id text field
-     * @return 
+     * @return the patient id
      */
     public String getPatientId(){
         return patientId.getText();
@@ -41,7 +45,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to return the search button
-     * @return 
+     * @return the patient search button
      */
     public JButton getSearch(){
         return search_button;
@@ -49,7 +53,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient first name
-     * @param fname
+     * @param fname the patient first name text
      */
     public void setPatientFname(String fname){
         patientFname.setText(fname);
@@ -57,7 +61,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get patient first name
-     * @return 
+     * @return the patient first name
      */
     public String getPatientFname(){
         return patientFname.getText();
@@ -65,7 +69,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient surname
-     * @param sname
+     * @param sname the patient surname
      */
     public void setPatientSname(String sname){
         patientSname.setText(sname);
@@ -73,7 +77,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get patient surname
-     * @return 
+     * @return the patient surname
      */
     public String getPatientSname(){
         return patientSname.getText();
@@ -81,7 +85,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient age
-     * @param age 
+     * @param age the patient age
      */
     public void setPatientAge (String age){
         patientAge.setText(age);
@@ -89,7 +93,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient blood
-     * @param blood 
+     * @param blood the patient blood
      */
     public void setPatientBlood(String blood){
         patientBlood.setText(blood);
@@ -97,7 +101,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient disease
-     * @param disease 
+     * @param disease the patient disease
      */
     public void setPatientDisease(String disease){
         patientDisease.setText(disease);
@@ -105,7 +109,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient symptom
-     * @param symptom 
+     * @param symptom the patient symptom
      */
     public void setPatientSymptom(String symptom){
         patientSymptom.setText(symptom);
@@ -113,7 +117,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for patient drug
-     * @param drug 
+     * @param drug the patient drug
      */
     public void setPatientDrug(String drug){
         patientDrug.setText(drug);
@@ -121,7 +125,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to return text for patient drug
-     * @return 
+     * @return the patient drug
      */
     public String getPatientDrug(){
         return patientDrug.getText();
@@ -129,7 +133,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to set text for drug instruction
-     * @param instruction 
+     * @param instruction the patient instruction
      */
     public void setDrugInstruction(String instruction){
         drugInstruction.setText(instruction);
@@ -137,19 +141,23 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to get drug instruction
-     * @return 
+     * @return the patient drug instruction
      */
     public String getDrugIns(){
         return drugInstruction.getText();
     }
     
+    /**
+     * Method to add element to the list model
+     * @param w the object to add
+     */
     public void list(Object w){
         list_model.addElement(w);
     }
     
     /**
      * Method to return the close button
-     * @return 
+     * @return the close button
      */
     public JButton getClose(){
         return close;
@@ -157,7 +165,7 @@ public class Pharmacy_View extends javax.swing.JFrame {
     
     /**
      * Method to return print button
-     * @return 
+     * @return the print button
      */
     public JButton getPrint(){
         return print;
@@ -381,7 +389,6 @@ public class Pharmacy_View extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-//                new Pharmacy_View().setVisible(true);
             }
         });
     }

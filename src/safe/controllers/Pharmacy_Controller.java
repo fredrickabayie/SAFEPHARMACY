@@ -10,11 +10,11 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import safe.models.Pharmacy_Database_Model;
 import safe.views.Pharmacy_View;
-import static safe.views.Pharmacy_View.list;
 
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class Pharmacy_Controller {
     Pharmacy_View pharmacy_view;
@@ -23,8 +23,8 @@ public class Pharmacy_Controller {
     
     /**
      * Constructor for the class
-     * @param pharmacy_view
-     * @param database_model
+     * @param pharmacy_view instance of the pharmacy view class
+     * @param database_model instance of the database model class
      */
     public Pharmacy_Controller(Pharmacy_View pharmacy_view,Pharmacy_Database_Model database_model){
         this.pharmacy_view = pharmacy_view;
@@ -66,7 +66,9 @@ public void pharmacyButton (){
     }
 }
 
-
+/**
+ * Method to search for patient
+ */
 public void search(){
     try{
         String id = pharmacy_view.getPatientId();
@@ -78,6 +80,9 @@ public void search(){
     
 }//End of search
 
+/**
+ * Method to print data in the table
+ */
 public void print(){
     String fname = pharmacy_view.getPatientFname();
     String sname = pharmacy_view.getPatientSname();

@@ -12,6 +12,7 @@ import safe.views.Pharmacy_View;
 /**
  *
  * @author Abayie Fredrick
+ * @version 1.02
  */
 public class SAFEPHARMACY {
 
